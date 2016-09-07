@@ -21,4 +21,4 @@ NOTICE: before building, you need to
 2. update libraries at OpenVoiceCall/libs
 
 
-Enjoy video calling!
+Enjoy voice calling!
