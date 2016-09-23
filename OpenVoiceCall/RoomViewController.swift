@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RoomVCDelegate: class {
-    func roomVCNeedClose(roomVC: RoomViewController)
+    func roomVCNeedClose(_ roomVC: RoomViewController)
 }
 
 class RoomViewController: UIViewController {
@@ -22,20 +22,20 @@ class RoomViewController: UIViewController {
     var roomName: String!
     weak var delegate: RoomVCDelegate?
     
-    private var agoraKit: AgoraRtcEngineKit!
-    private var logs = [String]()
+    fileprivate var agoraKit: AgoraRtcEngineKit!
+    fileprivate var logs = [String]()
     
-    private var audioMuted = false {
+    fileprivate var audioMuted = false {
         didSet {
-            muteAudioButton?.setImage(UIImage(named: audioMuted ? "btn_mute_blue" : "btn_mute"), forState: .Normal)
+            muteAudioButton?.setImage(UIImage(named: audioMuted ? "btn_mute_blue" : "btn_mute"), for: UIControlState())
             agoraKit.muteLocalAudioStream(audioMuted)
         }
     }
     
-    private var speakerEnabled = true {
+    fileprivate var speakerEnabled = true {
         didSet {
-            speakerButton?.setImage(UIImage(named: speakerEnabled ? "btn_speaker_blue" : "btn_speaker"), forState: .Normal)
-            speakerButton?.setImage(UIImage(named: speakerEnabled ? "btn_speaker" : "btn_speaker_blue"), forState: .Highlighted)
+            speakerButton?.setImage(UIImage(named: speakerEnabled ? "btn_speaker_blue" : "btn_speaker"), for: UIControlState())
+            speakerButton?.setImage(UIImage(named: speakerEnabled ? "btn_speaker" : "btn_speaker_blue"), for: .highlighted)
             
             agoraKit.setEnableSpeakerphone(speakerEnabled)
         }
@@ -50,21 +50,21 @@ class RoomViewController: UIViewController {
         loadAgoraKit()
     }
     
-    @IBAction func doMuteAudioPressed(sender: UIButton) {
+    @IBAction func doMuteAudioPressed(_ sender: UIButton) {
         audioMuted = !audioMuted
     }
     
-    @IBAction func doSpeakerPressed(sender: UIButton) {
+    @IBAction func doSpeakerPressed(_ sender: UIButton) {
         speakerEnabled = !speakerEnabled
     }
     
-    @IBAction func doClosePressed(sender: UIButton) {
+    @IBAction func doClosePressed(_ sender: UIButton) {
         leaveChannel()
     }
 }
 
 private extension RoomViewController {
-    func appendLog(string: String) {
+    func append(log string: String) {
         guard !string.isEmpty else {
             return
         }
@@ -76,36 +76,36 @@ private extension RoomViewController {
             deleted = logs.removeFirst()
         }
         
-        updateLogTableWithDeletedString(deleted)
+        updateLogTable(withDeleted: deleted)
     }
     
-    func updateLogTableWithDeletedString(deleted: String?) {
+    func updateLogTable(withDeleted deleted: String?) {
         guard let tableView = logTableView else {
             return
         }
         
-        let insertIndexPath = NSIndexPath(forRow: logs.count - 1, inSection: 0)
+        let insertIndexPath = IndexPath(row: logs.count - 1, section: 0)
         
         tableView.beginUpdates()
         if deleted != nil {
-            tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .None)
+            tableView.deleteRows(at: [IndexPath(row: 0, section: 0)], with: .none)
         }
-        tableView.insertRowsAtIndexPaths([insertIndexPath], withRowAnimation: .None)
+        tableView.insertRows(at: [insertIndexPath], with: .none)
         tableView.endUpdates()
         
-        tableView.scrollToRowAtIndexPath(insertIndexPath, atScrollPosition: .Bottom, animated: false)
+        tableView.scrollToRow(at: insertIndexPath, at: .bottom, animated: false)
     }
 }
 
 //MARK: - table view
 extension RoomViewController: UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return logs.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("logCell", forIndexPath: indexPath) as! LogCell
-        cell.setLog(logs[indexPath.row])
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "logCell", for: indexPath) as! LogCell
+        cell.set(log: logs[(indexPath as NSIndexPath).row])
         return cell
     }
 }
@@ -113,13 +113,13 @@ extension RoomViewController: UITableViewDataSource {
 //MARK: - engine
 private extension RoomViewController {
     func loadAgoraKit() {
-        agoraKit = AgoraRtcEngineKit.sharedEngineWithAppId(KeyCenter.AppId, delegate: self)
+        agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: KeyCenter.AppId, delegate: self)
         
-        let code = agoraKit.joinChannelByKey(nil, channelName: roomName, info: nil, uid: 0, joinSuccess: nil)
+        let code = agoraKit.joinChannel(byKey: nil, channelName: roomName, info: nil, uid: 0, joinSuccess: nil)
         
         if code != 0 {
-            dispatch_async(dispatch_get_main_queue(), {
-                self.appendLog("Join channel failed: \(code)")
+            DispatchQueue.main.async(execute: {
+                self.append(log: "Join channel failed: \(code)")
             })
         }
     }
@@ -131,35 +131,35 @@ private extension RoomViewController {
 }
 
 extension RoomViewController: AgoraRtcEngineDelegate {
-    func rtcEngineConnectionDidInterrupted(engine: AgoraRtcEngineKit!) {
-        appendLog("Connection Interrupted")
+    func rtcEngineConnectionDidInterrupted(_ engine: AgoraRtcEngineKit!) {
+        append(log: "Connection Interrupted")
     }
     
-    func rtcEngineConnectionDidLost(engine: AgoraRtcEngineKit!) {
-        appendLog("Connection Lost")
+    func rtcEngineConnectionDidLost(_ engine: AgoraRtcEngineKit!) {
+        append(log: "Connection Lost")
     }
     
-    func rtcEngine(engine: AgoraRtcEngineKit!, didOccurError errorCode: AgoraRtcErrorCode) {
-        appendLog("Occur error: \(errorCode.rawValue)")
+    func rtcEngine(_ engine: AgoraRtcEngineKit!, didOccurError errorCode: AgoraRtcErrorCode) {
+        append(log: "Occur error: \(errorCode.rawValue)")
     }
     
-    func rtcEngine(engine: AgoraRtcEngineKit!, didJoinChannel channel: String!, withUid uid: UInt, elapsed: Int) {
-        appendLog("Did joined channel: \(channel), with uid: \(uid), elapsed: \(elapsed)")
+    func rtcEngine(_ engine: AgoraRtcEngineKit!, didJoinChannel channel: String!, withUid uid: UInt, elapsed: Int) {
+        append(log: "Did joined channel: \(channel), with uid: \(uid), elapsed: \(elapsed)")
     }
     
-    func rtcEngine(engine: AgoraRtcEngineKit!, didJoinedOfUid uid: UInt, elapsed: Int) {
-        appendLog("Did joined of uid: \(uid)")
+    func rtcEngine(_ engine: AgoraRtcEngineKit!, didJoinedOfUid uid: UInt, elapsed: Int) {
+        append(log: "Did joined of uid: \(uid)")
     }
     
-    func rtcEngine(engine: AgoraRtcEngineKit!, didOfflineOfUid uid: UInt, reason: AgoraRtcUserOfflineReason) {
-        appendLog("Did offline of uid: \(uid), reason: \(reason.rawValue)")
+    func rtcEngine(_ engine: AgoraRtcEngineKit!, didOfflineOfUid uid: UInt, reason: AgoraRtcUserOfflineReason) {
+        append(log: "Did offline of uid: \(uid), reason: \(reason.rawValue)")
     }
     
-    func rtcEngine(engine: AgoraRtcEngineKit!, audioQualityOfUid uid: UInt, quality: AgoraRtcQuality, delay: UInt, lost: UInt) {
-        appendLog("Audio Quality of uid: \(uid), quality: \(quality.rawValue), delay: \(delay), lost: \(lost)")
+    func rtcEngine(_ engine: AgoraRtcEngineKit!, audioQualityOfUid uid: UInt, quality: AgoraRtcQuality, delay: UInt, lost: UInt) {
+        append(log: "Audio Quality of uid: \(uid), quality: \(quality.rawValue), delay: \(delay), lost: \(lost)")
     }
     
-    func rtcEngine(engine: AgoraRtcEngineKit!, didApiCallExecute api: String!, error: Int) {
-        appendLog("Did api call execute: \(api), error: \(error)")
+    func rtcEngine(_ engine: AgoraRtcEngineKit!, didApiCallExecute api: String!, error: Int) {
+        append(log: "Did api call execute: \(api), error: \(error)")
     }
 }

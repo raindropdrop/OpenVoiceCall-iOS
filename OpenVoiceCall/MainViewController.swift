@@ -12,47 +12,47 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var roomNameTextField: UITextField!
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        guard let segueId = segue.identifier where segueId == "mainToRoom",
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueId = segue.identifier , segueId == "mainToRoom",
             let roomName = sender as? String else {
             return
         }
         
-        let roomVC = segue.destinationViewController as! RoomViewController
+        let roomVC = segue.destination as! RoomViewController
         roomVC.roomName = roomName
         roomVC.delegate = self
     }
     
-    @IBAction func doRoomNameTextFieldEditing(sender: UITextField) {
-        if let text = sender.text where !text.isEmpty {
-            let legalString = MediaCharacter.updateToLegalMediaString(text)
+    @IBAction func doRoomNameTextFieldEditing(_ sender: UITextField) {
+        if let text = sender.text , !text.isEmpty {
+            let legalString = MediaCharacter.updateToLegalMediaString(from: text)
             sender.text = legalString
         }
     }
     
-    @IBAction func doJoinPressed(sender: UIButton) {
-        enterRoom(roomNameTextField.text)
+    @IBAction func doJoinPressed(_ sender: UIButton) {
+        enter(roomName: roomNameTextField.text)
     }
 }
 
 private extension MainViewController {
-    func enterRoom(roomName: String?) {
-        guard let roomName = roomName where !roomName.isEmpty else {
+    func enter(roomName: String?) {
+        guard let roomName = roomName , !roomName.isEmpty else {
             return
         }
-        performSegueWithIdentifier("mainToRoom", sender: roomName)
+        performSegue(withIdentifier: "mainToRoom", sender: roomName)
     }
 }
 
 extension MainViewController: RoomVCDelegate {
-    func roomVCNeedClose(roomVC: RoomViewController) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func roomVCNeedClose(_ roomVC: RoomViewController) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
 extension MainViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        enterRoom(textField.text)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        enter(roomName: textField.text)
         return true
     }
 }

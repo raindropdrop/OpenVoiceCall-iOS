@@ -12,9 +12,7 @@ class LogCell: UITableViewCell {
 
     @IBOutlet weak var logLabel: UILabel!
     
-    func setLog(log: String) {
-//        backgroundColor = UIColor.clearColor()
-        
+    func set(log: String) {        
         logLabel.text = log
     }
 }
