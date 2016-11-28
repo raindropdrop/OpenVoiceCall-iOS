@@ -44,7 +44,7 @@ class RoomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        roomNameLabel.text = "\(roomName)"
+        roomNameLabel.text = "\(roomName!)"
         logTableView.rowHeight = UITableViewAutomaticDimension
         logTableView.estimatedRowHeight = 25
         loadAgoraKit()
