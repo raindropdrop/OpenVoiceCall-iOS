@@ -144,7 +144,7 @@ extension RoomViewController: AgoraRtcEngineDelegate {
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit!, didJoinChannel channel: String!, withUid uid: UInt, elapsed: Int) {
-        append(log: "Did joined channel: \(channel), with uid: \(uid), elapsed: \(elapsed)")
+        append(log: "Did joined channel: \(channel!), with uid: \(uid), elapsed: \(elapsed)")
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit!, didJoinedOfUid uid: UInt, elapsed: Int) {
@@ -160,6 +160,6 @@ extension RoomViewController: AgoraRtcEngineDelegate {
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit!, didApiCallExecute api: String!, error: Int) {
-        append(log: "Did api call execute: \(api), error: \(error)")
+        append(log: "Did api call execute: \(api!), error: \(error)")
     }
 }
