@@ -22,7 +22,18 @@
 		073178091D800C190062A68C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073178061D800C190062A68C /* MainViewController.swift */; };
 		0731780A1D800C190062A68C /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073178071D800C190062A68C /* RoomViewController.swift */; };
 		0731780C1D800CF20062A68C /* MediaCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731780B1D800CF20062A68C /* MediaCharacter.swift */; };
+		07F531E31E28C1A1009BFE58 /* OpenVoiceCallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F531E21E28C1A1009BFE58 /* OpenVoiceCallUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07F531E51E28C1A1009BFE58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 073177B71D7FFDF80062A68C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 073177BE1D7FFDF80062A68C;
+			remoteInfo = OpenVoiceCall;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		071792751D801C950056FF98 /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
@@ -43,6 +54,9 @@
 		073178061D800C190062A68C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		073178071D800C190062A68C /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		0731780B1D800CF20062A68C /* MediaCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCharacter.swift; sourceTree = "<group>"; };
+		07F531E01E28C1A0009BFE58 /* OpenVoiceCallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenVoiceCallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07F531E21E28C1A1009BFE58 /* OpenVoiceCallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenVoiceCallUITests.swift; sourceTree = "<group>"; };
+		07F531E41E28C1A1009BFE58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +73,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		07F531DD1E28C1A0009BFE58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -66,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				073177C11D7FFDF80062A68C /* OpenVoiceCall */,
+				07F531E11E28C1A1009BFE58 /* OpenVoiceCallUITests */,
 				073177C01D7FFDF80062A68C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				073177BF1D7FFDF80062A68C /* OpenVoiceCall.app */,
+				07F531E01E28C1A0009BFE58 /* OpenVoiceCallUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,6 +142,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		07F531E11E28C1A1009BFE58 /* OpenVoiceCallUITests */ = {
+			isa = PBXGroup;
+			children = (
+				07F531E21E28C1A1009BFE58 /* OpenVoiceCallUITests.swift */,
+				07F531E41E28C1A1009BFE58 /* Info.plist */,
+			);
+			path = OpenVoiceCallUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,13 +171,31 @@
 			productReference = 073177BF1D7FFDF80062A68C /* OpenVoiceCall.app */;
 			productType = "com.apple.product-type.application";
 		};
+		07F531DF1E28C1A0009BFE58 /* OpenVoiceCallUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07F531E91E28C1A1009BFE58 /* Build configuration list for PBXNativeTarget "OpenVoiceCallUITests" */;
+			buildPhases = (
+				07F531DC1E28C1A0009BFE58 /* Sources */,
+				07F531DD1E28C1A0009BFE58 /* Frameworks */,
+				07F531DE1E28C1A0009BFE58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07F531E61E28C1A1009BFE58 /* PBXTargetDependency */,
+			);
+			name = OpenVoiceCallUITests;
+			productName = OpenVoiceCallUITests;
+			productReference = 07F531E01E28C1A0009BFE58 /* OpenVoiceCallUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		073177B71D7FFDF80062A68C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Agora;
 				TargetAttributes = {
@@ -157,6 +207,11 @@
 								enabled = 1;
 							};
 						};
+					};
+					07F531DF1E28C1A0009BFE58 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 073177BE1D7FFDF80062A68C;
 					};
 				};
 			};
@@ -174,6 +229,7 @@
 			projectRoot = "";
 			targets = (
 				073177BE1D7FFDF80062A68C /* OpenVoiceCall */,
+				07F531DF1E28C1A0009BFE58 /* OpenVoiceCallUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -186,6 +242,13 @@
 				073177CD1D7FFDF90062A68C /* LaunchScreen.storyboard in Resources */,
 				073177CA1D7FFDF90062A68C /* Assets.xcassets in Resources */,
 				073177C81D7FFDF90062A68C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07F531DE1E28C1A0009BFE58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +268,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		07F531DC1E28C1A0009BFE58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07F531E31E28C1A1009BFE58 /* OpenVoiceCallUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07F531E61E28C1A1009BFE58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 073177BE1D7FFDF80062A68C /* OpenVoiceCall */;
+			targetProxy = 07F531E51E28C1A1009BFE58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		073177C61D7FFDF90062A68C /* Main.storyboard */ = {
@@ -358,6 +437,35 @@
 			};
 			name = Release;
 		};
+		07F531E71E28C1A1009BFE58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = OpenVoiceCallUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.agora.OpenVoiceCallUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = OpenVoiceCall;
+			};
+			name = Debug;
+		};
+		07F531E81E28C1A1009BFE58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = OpenVoiceCallUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.agora.OpenVoiceCallUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = OpenVoiceCall;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -378,6 +486,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		07F531E91E28C1A1009BFE58 /* Build configuration list for PBXNativeTarget "OpenVoiceCallUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07F531E71E28C1A1009BFE58 /* Debug */,
+				07F531E81E28C1A1009BFE58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
