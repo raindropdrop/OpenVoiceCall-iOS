@@ -12,7 +12,6 @@
 		073177C81D7FFDF90062A68C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073177C61D7FFDF90062A68C /* Main.storyboard */; };
 		073177CA1D7FFDF90062A68C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073177C91D7FFDF90062A68C /* Assets.xcassets */; };
 		073177CD1D7FFDF90062A68C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073177CB1D7FFDF90062A68C /* LaunchScreen.storyboard */; };
-		073177D61D7FFEBE0062A68C /* AgoraAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073177D51D7FFEBE0062A68C /* AgoraAudioKit.framework */; };
 		073177FB1D800B250062A68C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 073177FA1D800B250062A68C /* libc++.tbd */; };
 		073177FD1D800B2E0062A68C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073177FC1D800B2E0062A68C /* AVFoundation.framework */; };
 		073177FF1D800B360062A68C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073177FE1D800B360062A68C /* AudioToolbox.framework */; };
@@ -22,6 +21,8 @@
 		073178091D800C190062A68C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073178061D800C190062A68C /* MainViewController.swift */; };
 		0731780A1D800C190062A68C /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073178071D800C190062A68C /* RoomViewController.swift */; };
 		0731780C1D800CF20062A68C /* MediaCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731780B1D800CF20062A68C /* MediaCharacter.swift */; };
+		07D29C641E9E209B00C3583C /* AgoraAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D29C631E9E209B00C3583C /* AgoraAudioKit.framework */; };
+		07D29C671E9E20BA00C3583C /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D29C661E9E20BA00C3583C /* libresolv.tbd */; };
 		07F531E31E28C1A1009BFE58 /* OpenVoiceCallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F531E21E28C1A1009BFE58 /* OpenVoiceCallUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +44,6 @@
 		073177C91D7FFDF90062A68C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		073177CC1D7FFDF90062A68C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		073177CE1D7FFDF90062A68C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		073177D51D7FFEBE0062A68C /* AgoraAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraAudioKit.framework; sourceTree = "<group>"; };
 		073177D71D7FFECE0062A68C /* OpenVoiceCall-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenVoiceCall-Bridging-Header.h"; sourceTree = "<group>"; };
 		073177FA1D800B250062A68C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		073177FC1D800B2E0062A68C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -54,6 +54,8 @@
 		073178061D800C190062A68C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		073178071D800C190062A68C /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		0731780B1D800CF20062A68C /* MediaCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCharacter.swift; sourceTree = "<group>"; };
+		07D29C631E9E209B00C3583C /* AgoraAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraAudioKit.framework; sourceTree = "<group>"; };
+		07D29C661E9E20BA00C3583C /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		07F531E01E28C1A0009BFE58 /* OpenVoiceCallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenVoiceCallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F531E21E28C1A1009BFE58 /* OpenVoiceCallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenVoiceCallUITests.swift; sourceTree = "<group>"; };
 		07F531E41E28C1A1009BFE58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,12 +66,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D29C671E9E20BA00C3583C /* libresolv.tbd in Frameworks */,
 				073178031D800B490062A68C /* CoreMotion.framework in Frameworks */,
 				073178011D800B3E0062A68C /* CoreTelephony.framework in Frameworks */,
 				073177FF1D800B360062A68C /* AudioToolbox.framework in Frameworks */,
+				07D29C641E9E209B00C3583C /* AgoraAudioKit.framework in Frameworks */,
 				073177FD1D800B2E0062A68C /* AVFoundation.framework in Frameworks */,
 				073177FB1D800B250062A68C /* libc++.tbd in Frameworks */,
-				073177D61D7FFEBE0062A68C /* AgoraAudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +92,7 @@
 				073177C11D7FFDF80062A68C /* OpenVoiceCall */,
 				07F531E11E28C1A1009BFE58 /* OpenVoiceCallUITests */,
 				073177C01D7FFDF80062A68C /* Products */,
+				07D29C651E9E20BA00C3583C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,7 +114,7 @@
 				0731780B1D800CF20062A68C /* MediaCharacter.swift */,
 				071792751D801C950056FF98 /* LogCell.swift */,
 				073177C61D7FFDF90062A68C /* Main.storyboard */,
-				073177D41D7FFEBE0062A68C /* libs */,
+				07D29C631E9E209B00C3583C /* AgoraAudioKit.framework */,
 				073178041D800B650062A68C /* Frameworks */,
 				073177C91D7FFDF90062A68C /* Assets.xcassets */,
 				073177C21D7FFDF90062A68C /* AppDelegate.swift */,
@@ -121,15 +125,6 @@
 			path = OpenVoiceCall;
 			sourceTree = "<group>";
 		};
-		073177D41D7FFEBE0062A68C /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				073177D51D7FFEBE0062A68C /* AgoraAudioKit.framework */,
-			);
-			path = libs;
-			name = libs;
-			sourceTree = "<group>";
-		};
 		073178041D800B650062A68C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +133,14 @@
 				073177FE1D800B360062A68C /* AudioToolbox.framework */,
 				073177FC1D800B2E0062A68C /* AVFoundation.framework */,
 				073177FA1D800B250062A68C /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		07D29C651E9E20BA00C3583C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07D29C661E9E20BA00C3583C /* libresolv.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				TargetAttributes = {
 					073177BE1D7FFDF80062A68C = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 48TB6ZZL5S;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -401,10 +405,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 48TB6ZZL5S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OpenVoiceCall/libs",
+					"$(PROJECT_DIR)/OpenVoiceCall",
 				);
 				INFOPLIST_FILE = OpenVoiceCall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -422,10 +427,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 48TB6ZZL5S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OpenVoiceCall/libs",
+					"$(PROJECT_DIR)/OpenVoiceCall",
 				);
 				INFOPLIST_FILE = OpenVoiceCall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -494,6 +500,7 @@
 				07F531E81E28C1A1009BFE58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,11 +1,11 @@
-# OpenVoiceCall_iOS
+# OpenVoiceCall iOS
 
 Agora OpenVoiceCall is a demo of [Agora.io](http://www.agora.io) Audio SDK - iOS
 
 
 ## Bug reports
 
-* https://github.com/AgoraLab/OpenVoiceCall_iOS/issues
+* https://github.com/AgoraIO/OpenVoiceCall-iOS/issues
 
 
 ## Build Instructions
@@ -18,7 +18,7 @@ NOTICE: before building, you need to
 	you can get your app id at https://dashboard.agora.io
 
 
-2. update libraries at OpenVoiceCall/libs
+2. update libraries at OpenVoiceCall
 
 
 Enjoy voice calling!
