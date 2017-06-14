@@ -16,13 +16,13 @@
 		073177FD1D800B2E0062A68C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073177FC1D800B2E0062A68C /* AVFoundation.framework */; };
 		073177FF1D800B360062A68C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073177FE1D800B360062A68C /* AudioToolbox.framework */; };
 		073178011D800B3E0062A68C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073178001D800B3E0062A68C /* CoreTelephony.framework */; };
-		073178031D800B490062A68C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073178021D800B490062A68C /* CoreMotion.framework */; };
 		073178081D800C190062A68C /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073178051D800C190062A68C /* KeyCenter.swift */; };
 		073178091D800C190062A68C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073178061D800C190062A68C /* MainViewController.swift */; };
 		0731780A1D800C190062A68C /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073178071D800C190062A68C /* RoomViewController.swift */; };
 		0731780C1D800CF20062A68C /* MediaCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731780B1D800CF20062A68C /* MediaCharacter.swift */; };
 		07D29C641E9E209B00C3583C /* AgoraAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D29C631E9E209B00C3583C /* AgoraAudioKit.framework */; };
 		07D29C671E9E20BA00C3583C /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D29C661E9E20BA00C3583C /* libresolv.tbd */; };
+		07D41FA11EF0DF0A004B29F9 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D41FA01EF0DF0A004B29F9 /* CoreMedia.framework */; };
 		07F531E31E28C1A1009BFE58 /* OpenVoiceCallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F531E21E28C1A1009BFE58 /* OpenVoiceCallUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +56,7 @@
 		0731780B1D800CF20062A68C /* MediaCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCharacter.swift; sourceTree = "<group>"; };
 		07D29C631E9E209B00C3583C /* AgoraAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraAudioKit.framework; sourceTree = "<group>"; };
 		07D29C661E9E20BA00C3583C /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		07D41FA01EF0DF0A004B29F9 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		07F531E01E28C1A0009BFE58 /* OpenVoiceCallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenVoiceCallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F531E21E28C1A1009BFE58 /* OpenVoiceCallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenVoiceCallUITests.swift; sourceTree = "<group>"; };
 		07F531E41E28C1A1009BFE58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,8 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D41FA11EF0DF0A004B29F9 /* CoreMedia.framework in Frameworks */,
 				07D29C671E9E20BA00C3583C /* libresolv.tbd in Frameworks */,
-				073178031D800B490062A68C /* CoreMotion.framework in Frameworks */,
 				073178011D800B3E0062A68C /* CoreTelephony.framework in Frameworks */,
 				073177FF1D800B360062A68C /* AudioToolbox.framework in Frameworks */,
 				07D29C641E9E209B00C3583C /* AgoraAudioKit.framework in Frameworks */,
@@ -140,6 +141,7 @@
 		07D29C651E9E20BA00C3583C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07D41FA01EF0DF0A004B29F9 /* CoreMedia.framework */,
 				07D29C661E9E20BA00C3583C /* libresolv.tbd */,
 			);
 			name = Frameworks;
