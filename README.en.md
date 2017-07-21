@@ -35,7 +35,7 @@ Finally, Open OpenVoiceCall.xcodeproj, connect your iPhone／iPad device, setup 
 ## Connect Us
 
 - You can find full API document at [Document Center](https://docs.agora.io/en/)
-- You can fire bugs about this demo at [issue](https://github.com/AgoraIO/OpenVoiceCall-iOS/issues)
+- You can file bugs about this demo at [issue](https://github.com/AgoraIO/OpenVoiceCall-iOS/issues)
 
 ## License
 
